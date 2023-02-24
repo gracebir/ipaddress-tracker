@@ -24,7 +24,7 @@ const BannerStyled = styled.div`
     background-image: url('https://res.cloudinary.com/dnzidlufh/image/upload/v1677255071/pattern-bg-desktop_ildpfn.png');
     width: 100%;
     background-position: 100% 100%;
-    height: 40vh;
+    height: 25vh;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
@@ -35,11 +35,17 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  @media (min-width: 45rem) {
+        gap: 2.3rem;
+    }
 `
 const UpperContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  @media (min-width: 45rem) {
+        gap: 1.5rem;
+    }
 `
 
 const HeadText = styled.h2`
@@ -52,6 +58,9 @@ const MapContainer = styled.div`
   height: 60vh;
   width: 100%;
   background-color: #0303;
+  @media (min-width: 45rem) {
+        height: 75vh;
+  }
 `
 
 
