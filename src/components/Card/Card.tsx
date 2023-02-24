@@ -1,11 +1,29 @@
 import React from 'react'
-import { CardBody, CardContainer } from './cardStyled'
+import { CardBody, CardContainer, CardItem, CarditemHead, CarditemInfo, Hr } from './cardStyled'
 
 function Card() {
   return (
     <CardContainer>
       <CardBody>
-        
+        <CardItem>
+            <CarditemHead>ip address</CarditemHead>
+            <CarditemInfo>192.212.174.101</CarditemInfo>
+        </CardItem>
+        <Hr />
+        <CardItem>
+            <CarditemHead>location</CarditemHead>
+            <CarditemInfo>Brooklyn, NY 1001</CarditemInfo>
+        </CardItem>
+        <Hr />
+        <CardItem>
+            <CarditemHead>timezone</CarditemHead>
+            <CarditemInfo>UTC-05:00</CarditemInfo>
+        </CardItem>
+        <Hr />
+        <CardItem>
+            <CarditemHead>isp</CarditemHead>
+            <CarditemInfo>SpaceX Startlink</CarditemInfo>
+        </CardItem>
       </CardBody>
     </CardContainer>
   )

@@ -7,8 +7,61 @@ export const CardContainer = styled.div`
     padding: 1rem 2rem;
     margin: 0 auto;
     border-radius: 10px;
+    display: flex;
+    align-items: center;
+    @media (min-width: 45rem) {
+        width: 60%;
+        min-height: 15vh;
+    }
 `
 
 export const CardBody = styled.div`
-    
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    @media (min-width: 45rem) {
+        gap: 2rem;
+        flex-direction: row;
+    }
+`
+
+export const CardItem = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    @media (min-width: 45rem) {
+        gap: 1rem;
+        align-items: flex-start;
+    }
+`
+
+export const Hr = styled.hr`
+    display: none;
+    @media (min-width: 45rem) {
+        display: block;
+    }
+`
+
+export const CarditemHead = styled.span`
+    color: var(--color-dark-gray);
+    font-size: .7rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    @media (min-width: 45rem) {
+        font-size: .825rem;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+`
+
+export const CarditemInfo = styled.span`
+    color: var(--color-very-dark-gray);
+    font-size: 1rem;
+    font-weight: 500;
+    @media (min-width: 45rem) {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
 `
