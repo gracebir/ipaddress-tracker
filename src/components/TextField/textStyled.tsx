@@ -5,6 +5,10 @@ export const TextFiledWrapper = styled.div`
     width: 100%;
     background-color: #fff;
     border-radius: 10px;
+    @media (min-width: 45rem) {
+        max-width: 40%;
+        margin: 0 auto;
+    }
 `
 
 export const TextFieldInput = styled.input`
@@ -15,7 +19,9 @@ export const TextFieldInput = styled.input`
     font-family: 'Rubik', sans-serif;
     border-radius: 10px 0 0 10px;
     width: 100%;
-
+    @media (min-width: 45rem) {
+       font-size: 1rem;
+    }
 `
 
 export const TextFieldButton = styled.div`
@@ -27,4 +33,7 @@ export const TextFieldButton = styled.div`
     color: #fff;
     width: 25%;
     cursor: pointer;
+    @media (min-width: 45rem) {
+        width: 15%;
+    }
 `
