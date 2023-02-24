@@ -1,10 +1,13 @@
 import React from 'react'
+import { CardBody, CardContainer } from './cardStyled'
 
 function Card() {
   return (
-    <div>
-      
-    </div>
+    <CardContainer>
+      <CardBody>
+        
+      </CardBody>
+    </CardContainer>
   )
 }
 
