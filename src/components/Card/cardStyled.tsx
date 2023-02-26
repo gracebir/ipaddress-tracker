@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
     background-color: #fff;
     width: 80%;
+    z-index: 999;
     min-height: 30vh;
     padding: 1rem 2rem;
     margin: 0 auto;

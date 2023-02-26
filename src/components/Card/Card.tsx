@@ -1,7 +1,11 @@
 import React from 'react'
 import { CardBody, CardContainer, CardItem, CarditemHead, CarditemInfo, Hr } from './cardStyled'
+import { geoDataType } from '../../axios'
+type cardProp = {
+  cardData: geoDataType
+}
 
-function Card() {
+function Card({cardData}: cardProp) {
   return (
     <CardContainer>
       <CardBody>
