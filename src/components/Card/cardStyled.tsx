@@ -10,7 +10,7 @@ export const CardContainer = styled.div`
     border-radius: 10px;
     display: flex;
     align-items: center;
-    @media (min-width: 57rem) {
+    @media (min-width: 60rem) {
         width: 60%;
         min-height: 15vh;
     }
@@ -21,8 +21,8 @@ export const CardBody = styled.div`
     width: 100%;
     flex-direction: column;
     gap: 1rem;
-    @media (min-width: 57rem) {
-        gap: 2rem;
+    @media (min-width: 80rem) {
+        gap: 3rem;
         flex-direction: row;
     }
 `
@@ -32,7 +32,7 @@ export const CardItem = styled.div`
     flex-direction: column;
     align-items: center;
     gap: .5rem;
-    @media (min-width: 57rem) {
+    @media (min-width:80rem) {
         gap: 1rem;
         align-items: flex-start;
     }
@@ -40,7 +40,7 @@ export const CardItem = styled.div`
 
 export const Hr = styled.hr`
     display: none;
-    @media (min-width: 57rem) {
+    @media (min-width: 80rem) {
         display: block;
     }
 `
@@ -51,7 +51,7 @@ export const CarditemHead = styled.span`
     text-transform: uppercase;
     font-weight: 700;
     @media (min-width: 57rem) {
-        font-size: .825rem;
+        font-size: 1rem;
         text-transform: uppercase;
         font-weight: 700;
     }
@@ -61,8 +61,8 @@ export const CarditemInfo = styled.span`
     color: var(--color-very-dark-gray);
     font-size: 1rem;
     font-weight: 500;
-    @media (min-width: 57rem) {
-        font-size: 1.5rem;
+    @media (min-width: 80rem) {
+        font-size: 1.7rem;
         font-weight: 500;
     }
 `
