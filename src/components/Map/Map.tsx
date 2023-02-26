@@ -10,7 +10,7 @@ type mapProp = {
 function Map({mapData}:mapProp) {
   return (
     <MapContainer>
-    <MapWrapper attributionControl={false} center={[mapData?.location.lat!, mapData?.location.lng!]} zoom={12}>
+    <MapWrapper attributionControl={false} center={[mapData?.location.lat!, mapData?.location.lng!]} zoom={15}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

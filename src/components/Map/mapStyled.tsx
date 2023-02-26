@@ -5,6 +5,6 @@ export const MapContainer = styled.div`
   width: 100%;
   background-color: #0303;
   @media (min-width: 45rem) {
-    height: 75vh;
+    height: 70vh;
   }
 `;
