@@ -23,26 +23,26 @@ const BannerStyled = styled.div`
     background-image: url("https://res.cloudinary.com/dnzidlufh/image/upload/v1677255071/pattern-bg-desktop_ildpfn.png");
     width: 100%;
     background-position: 100% 100%;
-    height: 25vh;
+    height: 30vh;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
   }
 `;
 const Container = styled.div`
-  padding: 2rem 1.5rem;
+  padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  @media (min-width: 45rem) {
-    gap: 2.3rem;
+  @media (min-width: 37rem) {
+    gap: 3rem;
   }
 `;
 const UpperContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  @media (min-width: 45rem) {
+  @media (min-width: 57rem) {
     gap: 1.5rem;
   }
 `;
@@ -51,6 +51,10 @@ const HeadText = styled.h2`
   text-align: center;
   font-weight: 700;
   color: #fff;
+  font-size: 1.5rem;
+  @media (min-width: 37rem) {
+    font-size: 2.7rem;
+  }
 `;
 
 function App() {
