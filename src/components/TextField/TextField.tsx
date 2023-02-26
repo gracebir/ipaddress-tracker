@@ -13,7 +13,7 @@ function TextField({textField, setTextField, handleSubmit}:textFieldProps) {
     <TextFiledWrapper>
       <TextFieldInput value={textField} onChange={(e)=> setTextField(e.target.value)} type="text" placeholder='Search for any IP address or domain'/>
       <TextFieldButton onClick={handleSubmit}>
-        <FiChevronRight/>
+        <FiChevronRight size={30}/>
       </TextFieldButton>
     </TextFiledWrapper>
   )

@@ -7,7 +7,7 @@ export const TextFiledWrapper = styled.div`
     margin: 0 auto;
     border-radius: 10px;
     @media (min-width: 57rem) {
-        max-width: 50%;
+        max-width: 35%;
         margin: 0 auto;
     }
 `
@@ -35,6 +35,6 @@ export const TextFieldButton = styled.div`
     width: 25%;
     cursor: pointer;
     @media (min-width: 57rem) {
-        width: 15%;
+        width: 10%;
     }
 `
