@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const TextFiledWrapper = styled.div`
     display: flex;
-    width: 100%;
+    width: 80%;
     background-color: #fff;
+    margin: 0 auto;
     border-radius: 10px;
-    @media (min-width: 45rem) {
-        max-width: 40%;
+    @media (min-width: 57rem) {
+        max-width: 50%;
         margin: 0 auto;
     }
 `
@@ -19,7 +20,7 @@ export const TextFieldInput = styled.input`
     font-family: 'Rubik', sans-serif;
     border-radius: 10px 0 0 10px;
     width: 100%;
-    @media (min-width: 45rem) {
+    @media (min-width: 57rem) {
        font-size: 1rem;
     }
 `
@@ -33,7 +34,7 @@ export const TextFieldButton = styled.div`
     color: #fff;
     width: 25%;
     cursor: pointer;
-    @media (min-width: 45rem) {
+    @media (min-width: 57rem) {
         width: 15%;
     }
 `

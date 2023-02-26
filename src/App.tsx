@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TextField from "./components/TextField/TextField";
 import styled from "styled-components";
 import Card from "./components/Card/Card";
-import { MapContainer as Map, Popup, TileLayer, Marker } from "react-leaflet";
 import { geoDataType, geoDataResponse } from "./axios";
+import Map from "./components/Map/Map";
 
 const AppStyled = styled.div`
   background-color: #f5f5f5;
@@ -53,21 +53,24 @@ const HeadText = styled.h2`
   color: #fff;
 `;
 
-const MapContainer = styled.div`
-  height: 60vh;
-  width: 100%;
-  background-color: #0303;
-  @media (min-width: 45rem) {
-    height: 75vh;
-  }
-`;
-
 function App() {
   const [textField, setTextField] = useState("")
   const [datas, setDatas] = useState<geoDataType>();
+  const [ip, setIp ] = useState("")
   const handleSubmit = async () => {
-    setDatas(await geoDataResponse(textField))
+    setIp(textField)
+    setDatas(await geoDataResponse(ip))
+    console.log("handle")
   }
+
+  useEffect(()=> {
+    const getData = async () => {
+      setDatas(await geoDataResponse(ip))
+    }
+    getData()
+    console.log("render")
+  },[ip])
+  if(!datas) return <div>Loading...</div>
   return (
     <AppStyled>
       <BannerStyled>
@@ -79,19 +82,7 @@ function App() {
           <Card cardData={datas!}/>
         </Container>
       </BannerStyled>
-      <MapContainer>
-        <Map center={[-1.970579, 30.104429]} zoom={12}>
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={[-1.953246, 30.092850]}>
-            <Popup>
-              Kigali height <br /> the build.
-            </Popup>
-          </Marker>
-        </Map>
-      </MapContainer>
+     <Map mapData={datas}/>
     </AppStyled>
   );
 }

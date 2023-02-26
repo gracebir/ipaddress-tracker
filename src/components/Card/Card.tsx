@@ -11,22 +11,22 @@ function Card({cardData}: cardProp) {
       <CardBody>
         <CardItem>
             <CarditemHead>ip address</CarditemHead>
-            <CarditemInfo>192.212.174.101</CarditemInfo>
+            <CarditemInfo>{cardData.ip}</CarditemInfo>
         </CardItem>
         <Hr />
         <CardItem>
             <CarditemHead>location</CarditemHead>
-            <CarditemInfo>Brooklyn, NY 1001</CarditemInfo>
+            <CarditemInfo>{`${cardData.location.city}, ${cardData.location.country}`}</CarditemInfo>
         </CardItem>
         <Hr />
         <CardItem>
             <CarditemHead>timezone</CarditemHead>
-            <CarditemInfo>UTC-05:00</CarditemInfo>
+            <CarditemInfo>UTC{cardData.location.timezone}</CarditemInfo>
         </CardItem>
         <Hr />
         <CardItem>
             <CarditemHead>isp</CarditemHead>
-            <CarditemInfo>SpaceX Startlink</CarditemInfo>
+            <CarditemInfo>{cardData.isp}</CarditemInfo>
         </CardItem>
       </CardBody>
     </CardContainer>
