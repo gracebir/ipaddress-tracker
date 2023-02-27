@@ -13,6 +13,9 @@ export const CardContainer = styled.div`
     @media (min-width: 60rem) {
         width: 60%;
         min-height: 15vh;
+        position: absolute;
+        left: 20%;
+        top: 20%;
     }
 `
 
@@ -61,8 +64,10 @@ export const CarditemInfo = styled.span`
     color: var(--color-very-dark-gray);
     font-size: 1rem;
     font-weight: 500;
+    text-align: center;
     @media (min-width: 80rem) {
-        font-size: 1.7rem;
+        font-size: 100%;
         font-weight: 500;
+        text-align: start;
     }
 `
