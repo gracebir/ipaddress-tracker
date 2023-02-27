@@ -23,7 +23,7 @@ const BannerStyled = styled.div`
     background-image: url("https://res.cloudinary.com/dnzidlufh/image/upload/v1677255071/pattern-bg-desktop_ildpfn.png");
     width: 100%;
     background-position: 100% 100%;
-    height: 30vh;
+    height: 35vh;
     background-repeat: no-repeat;
     background-size: cover;
     object-fit: cover;
