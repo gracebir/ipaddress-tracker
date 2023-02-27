@@ -14,8 +14,8 @@ export const CardContainer = styled.div`
         width: 60%;
         min-height: 15vh;
         position: absolute;
-        left: 20%;
-        top: 20%;
+        left: 19%;
+        top: 25%;
     }
 `
 
