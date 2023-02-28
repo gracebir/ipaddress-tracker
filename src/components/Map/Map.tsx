@@ -1,25 +1,40 @@
-import React from 'react'
-import { MapContainer as MapWrapper, Popup, TileLayer, Marker } from "react-leaflet";
+import React, { useEffect } from 'react'
+import { MapContainer as MapWrapper, useMap, TileLayer } from "react-leaflet";
+import { MarkerLayer, Marker } from 'react-leaflet-marker';
 import { MapContainer } from './mapStyled';
-import { geoDataType } from '../../axios'
+import { popPosition } from '../../icons/icons';
 
-type mapProp = {
-  mapData: geoDataType
+export type position = {
+  lat: number
+  lng: number
 }
 
-function Map({mapData}:mapProp) {
+type mapProps = {
+  center: position
+}
+
+function Map({center}:mapProps) {
+  const RePositionAutomatically = ({lat,lng}:position) => {
+    const map = useMap();
+     useEffect(() => {
+       map.setView([lat, lng]);
+       // eslint-disable-next-line 
+     }, [center]);
+     return null;
+   }
   return (
     <MapContainer>
-    <MapWrapper attributionControl={false} center={[mapData?.location.lat!, mapData?.location.lng!]} zoom={15}>
+    <MapWrapper scrollWheelZoom={true} center={[center.lat, center.lng]} zoom={15}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[mapData?.location.lat!, mapData?.location.lng!]}>
-        <Popup>
-          {mapData.location.region}
-        </Popup>
-      </Marker>
+      <MarkerLayer>
+        <Marker position={[center.lat, center.lng]}>
+          {popPosition}
+        </Marker>
+      </MarkerLayer>
+      <RePositionAutomatically lat={center.lat} lng={center.lng}/>
     </MapWrapper>
   </MapContainer>
   )
