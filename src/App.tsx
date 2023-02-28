@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import TextField from "./components/TextField/TextField";
 import styled from "styled-components";
 import Card from "./components/Card/Card";
-import { geoDataType, geoDataResponse } from "./axios";
-import Map from "./components/Map/Map";
+import { geoDataType, geoDataResponse, geoPosition } from "./axios";
+import Map, { position } from "./components/Map/Map";
 
 const AppStyled = styled.div`
   background-color: #f5f5f5;
@@ -60,19 +60,24 @@ const HeadText = styled.h2`
 function App() {
   const [textField, setTextField] = useState("")
   const [datas, setDatas] = useState<geoDataType>();
+  const [center, setCenter] = useState<position>({lat: 0, lng:0})
   const [ip, setIp ] = useState("")
   const handleSubmit = async () => {
     setIp(textField)
     setDatas(await geoDataResponse(ip))
-    console.log("handle")
+    setCenter(await geoPosition(ip))
   }
+
+  async function findMe(){
+  setCenter(await geoPosition(ip))
+}
 
   useEffect(()=> {
     const getData = async () => {
       setDatas(await geoDataResponse(ip))
     }
     getData()
-    console.log("render")
+    findMe()
   },[ip])
   if(!datas) return <div>Loading...</div>
   return (
@@ -86,7 +91,7 @@ function App() {
           <Card cardData={datas!}/>
         </Container>
       </BannerStyled>
-     <Map mapData={datas}/>
+     <Map center={center}/>
     </AppStyled>
   );
 }
