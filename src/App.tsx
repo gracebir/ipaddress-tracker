@@ -78,6 +78,7 @@ function App() {
     }
     getData()
     findMe()
+    // eslint-disable-next-line
   },[ip])
   if(!datas) return <div>Loading...</div>
   return (
